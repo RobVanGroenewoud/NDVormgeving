@@ -1,0 +1,249 @@
+@import "compass/utilities";
+@import "compass/css3";
+@import "reset";
+@import "colors";
+@import "typography";
+
+// HEADER
+
+.site-header {
+	text-align: center;
+}
+
+.logo img{
+	display: block;
+	width: 200px;
+	margin: 1em auto;
+}
+
+.menu {
+	list-style: none;
+	padding: 0;
+
+	border-top: 1px solid #000;
+	border-bottom: 1px solid #000;
+
+	.menu-item {
+		display: inline-block;
+		padding: .25em;
+		// position: relative;
+	}
+
+	.current-menu-item {
+		font-weight: bold;
+		padding-left: 0;
+		padding-right: 0;
+	}
+	// .current-menu-item:after {
+	// 	content: '';
+	// 	display: block;
+	// 	position: absolute;
+	// 	bottom: -15px;
+	// 	left: 45%;
+	// 	width: 20px;
+	// 	height: 20px;
+	// 	background-color: #fff;
+	// 	border-right: 1px solid #000;
+	// 	border-bottom: 1px solid #000;
+	// 	-webkit-transform: rotate(45deg) scale(.5);
+	// }
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen 
+and (max-width : 320px) {
+	.logo img {
+		width: 120px;
+	}
+
+	.menu-item {
+		font-size: .9em;
+	}
+}
+
+
+// MAIN
+
+.main-content {
+	@include clearfix;
+	padding: 0 2em 2em 2em;
+
+	p {
+		margin: 1em 0;
+	}
+
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+}
+
+
+// FOOTER
+
+.site-footer {
+	@include clearfix;
+
+	padding: 2em;
+	//@include background-image(linear-gradient(#ddd, transparent));
+	@include box-shadow(#ddd 0px 0px 5px inset);
+
+	border-top: 1px solid #ddd;
+	background-color: rgba(#222, .05);
+
+	color: #aaa;
+
+	font-size: .9em;
+
+	.primary {
+		float: left;
+		width: 45%;
+	}
+
+	.secundary {
+		float: right;
+		width: 45%;
+		padding-top: 9em;
+	}
+
+	.copyright {
+		padding-top: 1em;
+		display: block;
+		clear: both;
+		text-align: center;
+	}
+
+	.socialmedia {
+		a {
+			background-repeat: no-repeat;
+			background-position: left center;
+			
+			display: inline-block;
+			min-height: 26px;
+			line-height: 26px;
+			padding-left: 30px;
+			padding-right: 4px;
+		}
+
+		a[href^="http://twitter.com"] {
+			color: #00a0d1;
+			background-image: url(../img/twitter.png);
+		}
+		a[href^="http://facebook.com"] {
+			color: #3b5998;
+			background-image: url(../img/facebook.png);
+		}
+		a[href^="http://pinterest.com"] {
+			color: #c8232c;
+			background-image: url(../img/pinterest.png);
+		}
+	}
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen 
+and (max-width : 320px) {
+	.site-footer {
+		.primary,
+		.secundary {
+			float: none;
+			width: auto;
+		}
+		.secundary {
+			margin-top: 2em;
+			padding-top: 0;
+		}
+
+		.copyright,
+		.socialmedia {
+			text-align: center;
+		}
+	}
+}
+
+// CONTACT
+
+.vcard {
+	margin-bottom: 1em;
+	.org {
+		// font-weight: bold;
+	}
+	.email {
+		color: inherit;
+
+		// &:before {
+		// 	content: 'email: ';
+		// }
+	}
+
+	.tel {
+		color: inherit;
+		// &:before {
+		// 	content: 'tel: ';
+		// }	
+	}
+}
+
+.contactform {
+	clear: both;
+
+	input,
+	textarea {
+		padding: .3em;
+		border: 1px solid #ddd;
+		@include box-shadow(#ddd 2px 2px 2px inset);
+		@include border-radius(5px);
+	}
+
+	input {
+		display: block;
+		width: 100%;
+		margin: .5em 0;
+	}
+
+	textarea {
+		width: 100%;
+		margin: .5em 0;
+		display: block;
+	}
+}
+
+// SLIDER
+
+.swiper-area {
+	margin: 0 -2em;
+}
+
+.royalSlider > .rsContent {
+	display: none;
+}
+
+// PAGE Templates
+
+.related-posts {
+	// border-top: 1px solid #ddd;
+}
+
+.related-post {
+	padding: 1em 0;
+	display: inline-block;
+
+	img {
+		padding: 2px;
+		border: 1px solid #eee;
+		@include border-radius(2px);
+	}
+}
+
+@media only screen 
+and (min-width : 960px) {
+	.page-content {
+		width: 78%;
+		float: left;
+	}
+
+	.related-posts {
+		width: 20%;		
+		float: right;
+	}
+}
